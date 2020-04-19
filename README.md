@@ -17,7 +17,7 @@
 * 尽量用padding撑开div盒子,减少用margin(除非盒子与盒子之间)
 * 尽量用em,其次是 vh高/vw宽, 最后才是px
 * 用[Herb](http://herb.roosta.sh)复用CSS,把CSS当函数来用,来提高CSS的表达速度: `复用的速度^2 = 几何爆炸式的表达速度`
-
+* 调试CSS: 使用debug.css,或者是background设置成特殊颜色来判断盒子的层级和关系是否正确
 
 ## 水平布局
 
@@ -62,6 +62,23 @@
    "C"]]]
 ```
 
+## flex-auto弹性平分
+
+``` clojure
+;; flex-auto水平平分
+[:div.flex.flex-row.pt2.pb3 {:style {:width "10em"}}
+ [:div.gray.f5.flex.flex-auto "A"]
+ [:div.gray.f5.pl2.flex.flex-auto "B"]
+ [:div.gray.f5.pl2.flex.flex-auto "C"]]
+
+;; flex-auto垂直平分
+[:div.flex.flex-column.pt2.pb3 {:style {:height "10em"}}
+ [:div.gray.f5.flex.flex-auto "A"]
+ [:div.gray.f5.pl2.flex.flex-auto "B"]
+ [:div.gray.f5.pl2.flex.flex-auto "C"]]
+
+```
+
 ## Herb表达CSS伪元素
 
 ``` clojure
@@ -73,3 +90,7 @@
 ``` clojure
 
 ```
+
+## debug.css
+
+![](https://raw.githubusercontent.com/chanshunli/jim-emacs-fun-tachyons-flex-css/master/debug_css.png)
