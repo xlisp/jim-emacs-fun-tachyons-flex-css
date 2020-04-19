@@ -4,10 +4,18 @@
   - [相关资源](#%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90)
     - [python函数式的列表](#python%E5%87%BD%E6%95%B0%E5%BC%8F%E7%9A%84%E5%88%97%E8%A1%A8)
     - [JavaScript函数式的列表](#javascript%E5%87%BD%E6%95%B0%E5%BC%8F%E7%9A%84%E5%88%97%E8%A1%A8)
+  - [良好的第一性原则](#%E8%89%AF%E5%A5%BD%E7%9A%84%E7%AC%AC%E4%B8%80%E6%80%A7%E5%8E%9F%E5%88%99)
   - [水平布局](#%E6%B0%B4%E5%B9%B3%E5%B8%83%E5%B1%80)
   - [垂直布局](#%E5%9E%82%E7%9B%B4%E5%B8%83%E5%B1%80)
   - [垂直居中](#%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD)
   - [水平居中](#%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD)
+  - [位置至底](#%E4%BD%8D%E7%BD%AE%E8%87%B3%E5%BA%95)
+  - [flex-auto弹性平分](#flex-auto%E5%BC%B9%E6%80%A7%E5%B9%B3%E5%88%86)
+  - [Herb表达CSS伪元素](#herb%E8%A1%A8%E8%BE%BEcss%E4%BC%AA%E5%85%83%E7%B4%A0)
+  - [Herb使用多个CSS函数](#herb%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AAcss%E5%87%BD%E6%95%B0)
+  - [底部导航栏](#%E5%BA%95%E9%83%A8%E5%AF%BC%E8%88%AA%E6%A0%8F)
+  - [搜索框内部任意位置加一个图标](#%E6%90%9C%E7%B4%A2%E6%A1%86%E5%86%85%E9%83%A8%E4%BB%BB%E6%84%8F%E4%BD%8D%E7%BD%AE%E5%8A%A0%E4%B8%80%E4%B8%AA%E5%9B%BE%E6%A0%87)
+  - [debug.css](#debugcss)
 
 ## 相关资源
 ### [python函数式的列表](https://github.com/FPTensorFlow/jim-emacs-fun-py)
