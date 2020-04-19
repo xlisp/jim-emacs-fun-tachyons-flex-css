@@ -130,6 +130,24 @@
 
 ``` clojure
 
+[herb.core :refer [<class join]]
+
+
+(defn mutil-color []
+  {:color "#09f"})
+
+(defn msg-style []
+  ^{:pseudo {:after {:content "' '"
+                     :border-left-color "#b2e281"
+                     :border-left-width "4px"}}}
+  {:border-radius "5px"
+   :background-color "#b2e281"})
+
+[:div {:class (join
+                (<class msg-style)
+                (<class mutil-color))}
+ [:div {:style {:background "./img/voice.png"}}]
+ "ABC"]
 ```
 
 ## 底部导航栏
