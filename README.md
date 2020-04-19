@@ -83,6 +83,15 @@
 
 ``` clojure
 
+(defn hover-menu-style []
+  ^{:pseudo {:hover {:background "black"
+                     :color "white"}}}
+  {:color "black"})
+
+;; (:require [herb.core :refer [<class]])
+
+[:div.pa2 {:class (<class css/hover-menu-style)} "搜索"]
+
 ```
 
 ## Herb使用多个CSS函数
