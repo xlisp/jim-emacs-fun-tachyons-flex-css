@@ -14,10 +14,13 @@
 ### [JavaScript函数式的列表](https://github.com/chanshunli/jim-emacs-fun-es6)
 
 ## 良好的第一性原则
-* 尽量用padding撑开div盒子,减少用margin(除非盒子与盒子之间)
+* 尽量用padding撑开div盒子(每个盒子撑满的感觉),减少用margin(除非盒子与盒子之间,margin外边距,比较难调,会很乱), 外面格子撑满,里面才好处理,外面不要pa
 * 尽量用em,其次是 vh高/vw宽, 最后才是px
 * 用[Herb](http://herb.roosta.sh)复用CSS,把CSS当函数来用,来提高CSS的表达速度: `复用的速度^2 = 几何爆炸式的表达速度`
-* 调试CSS: 使用debug.css,或者是background设置成特殊颜色来判断盒子的层级和关系是否正确
+* 调试CSS: 使用debug.css,或者是background设置成特殊颜色来判断盒子的层级和关系是否正确(所有可视的div都给颜色是个好习惯)
+* 第一原理裸奔不用框架而是用最基础的css原理(越来越快，几何速度上升)和复用(平方等于复利): 重新自己写一遍css的时候，你就能最高效的复用，否则你抄别人的怎么都抄不对; 抄来抄去一辈子都进步不了，一辈子都自己写不出来复杂的页面
+* 你尝试那么多次,还不如撸一遍文档来得更快
+* 一边写样式的元解释器,一边写代码 => 最高速的大脑流 => Repl本质就是元解释器 ## nginx -t解释器 加 vi 修改检测 => Emacs hook mode
 
 ## 水平布局
 
@@ -60,6 +63,27 @@
   [:div.gray.b.f3.flex.justify-center.items-center
    {:style {:flex 1}}
    "C"]]]
+
+;;需要宽度才能居中
+[:div.b.f4.flex.justify-center.items-center
+ {:style
+  {:width "10em"}}
+ [:div "ABC"]]
+```
+
+## 位置至底
+
+``` clojure
+(defn button-style [{:keys [stri on-click]}]
+  [:div.flex.justify-end.items-end
+   [:button.f6.ba.bg-white
+    {:on-click on-click
+     :style {:border-radius "1em"
+             :height "2em"
+             :background "#de171a"
+             :color "white"
+             :width "5.5em"}}
+    stri]])
 ```
 
 ## flex-auto弹性平分
@@ -98,6 +122,39 @@
 
 ``` clojure
 
+```
+
+## 底部导航栏
+
+``` clojure
+
+(defn foot-item [text icon-path]
+  [:div.flex-auto.flex.flex-column.items-center.justify-between
+   [:div text]
+   [:img.h2 {:src icon-path}]])
+
+[:div.absolute.bottom-0.h3.pa3.flex.flex-row.items-center.w-100.bg-near-white.bt.b--moon-gray
+  [foot-item "首页" "img/home.svg"]
+  [foot-item "我的" "img/profile.svg"]]
+
+;;把foot浮动撑到最低,但保持不动
+(defn fullscreen [& body]
+  [:div.relative.vw-100.vh-100
+   (into [:div.absolute.top-0.bottom-0.left-0.right-0.flex.flex-column]
+     body)])
+```
+
+## 搜索框内部任意位置加一个图标
+
+``` clojure
+[:div.w-100.white.bb.f3.relative.h3.flex.flex-column.justify-center.bg-white
+ [:input.br-pill.h2.mh2.ph3.f6]
+ [:div.flex.flex-row.absolute.w-100.h-100.items-center.justify-center
+  {:style {:pointer-events :none}}
+  [:div [:img {:style {:width ".5em"}
+               :src "/img/search.svg"}]]
+  [:div.silver.f5
+   "搜索"]]]
 ```
 
 ## debug.css
