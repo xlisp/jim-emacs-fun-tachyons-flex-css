@@ -13,6 +13,12 @@
 ### [python函数式的列表](https://github.com/FPTensorFlow/jim-emacs-fun-py)
 ### [JavaScript函数式的列表](https://github.com/chanshunli/jim-emacs-fun-es6)
 
+## 良好的第一性原则
+* 尽量用padding撑开div盒子,减少用margin(除非盒子与盒子之间)
+* 尽量用em,其次是 vh高/vw宽, 最后才是px
+* 用[Herb](http://herb.roosta.sh)复用CSS,把CSS当函数来用,来提高CSS的表达速度: `复用的速度^2 = 几何爆炸式的表达速度`
+
+
 ## 水平布局
 
 ``` clojure
@@ -54,4 +60,16 @@
   [:div.gray.b.f3.flex.justify-center.items-center
    {:style {:flex 1}}
    "C"]]]
+```
+
+## Herb表达CSS伪元素
+
+``` clojure
+
+```
+
+## Herb使用多个CSS函数
+
+``` clojure
+
 ```
