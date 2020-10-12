@@ -78,7 +78,7 @@
   {:width "10em"}}
  [:div "ABC"]]
 
-;; 先不要绝对定位浮在上面, 等整体div调好之后，再加上绝对定位
+;; 先不要绝对定位浮在上面, 等整体div调好之后，再加上绝对定位 ## absolute之外不能再有absolute,否则会失效
 [:div.flex.justify-center.items-center.absolute
      {:style {:width "100vw" ;; 下面的50vw居中了
               :top "5em"}}
