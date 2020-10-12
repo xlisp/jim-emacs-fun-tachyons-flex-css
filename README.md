@@ -77,6 +77,23 @@
  {:style
   {:width "10em"}}
  [:div "ABC"]]
+
+;; 先不要绝对定位浮在上面, 等整体div调好之后，再加上绝对定位
+[:div.flex.justify-center.items-center.absolute
+     {:style {:width "100vw" ;; 下面的50vw居中了
+              :top "5em"}}
+     ;; .flex.items-center.justify-center
+     ;; {:style {:width "100%"
+     ;;          :top "5em"}}
+     [:div.br3.flex.flex-column
+      {:style {:z-index 9000 ;; 比alert更低一点
+               :width "50vw"
+               :background c/white
+               }}
+ [:div 局部div]
+ [:div 局部div]
+ [:div 局部div]
+]]
 ```
 
 ## 位置至底
