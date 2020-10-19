@@ -29,6 +29,7 @@
 * 第一原理裸奔不用框架而是用最基础的css原理(越来越快，几何速度上升)和复用(平方等于复利): 重新自己写一遍css的时候，你就能最高效的复用，否则你抄别人的怎么都抄不对; 抄来抄去一辈子都进步不了，一辈子都自己写不出来复杂的页面
 * 你尝试那么多次,还不如撸一遍文档来得更快
 * 一边写样式的元解释器,一边写代码 => 最高速的大脑流 => Repl本质就是元解释器 ## nginx -t解释器 加 vi 修改检测 => Emacs hook mode
+* 递归 relative相对定位 => absolute绝对定位 => relative 相对定位 => absolute 绝对定位 。。。
 
 ## 水平布局
 
@@ -198,6 +199,43 @@
                :src "/img/search.svg"}]]
   [:div.silver.f5
    "搜索"]]]
+```
+
+## 递归 relative相对定位 => absolute绝对定位
+```clojure
+(if @right-open-status
+  ;; 相对于整体某个位置的相对定位
+  [:div.relative
+   [right-dot-menu]]
+  [:nobr])
+
+(defn right-dot-menu []
+  ;; 相对上面的相对位置的绝对定位
+  [:div.absolute {:style {:top "0"
+                          :left  "0.2em"}}
+   [:div.flex.flex-column.bg-white.flex.justify-center.items-center.relative ;; 相对上面的绝对位置的相对定位
+    {:on-click nil
+     :style
+     {:width "6rem"
+      :z-index 8888
+      :top 0}}
+    [:div.pa2 "AAA"]
+    [:div.pa2 "BBBB"]
+    ;;
+    [:div
+     [:div.pa2.flex.flex-row
+      [:div.flex.flex-auto.mr3 "CCCC"]]
+     ;; 弹出来的子级菜单: 绝对定位
+     [:div.absolute.bg-white.br2
+      {:style {:bottom "0"
+               :left "6rem"}}
+      [:div.pa2 "123"]
+      [:div.pa2 "123"]
+      [:div.pa2 "123"]]]
+    ;;
+    [:div.pa2
+     [:div.flex.flex-auto.mr3 "EEEE"]]]])
+
 ```
 
 ## debug.css
