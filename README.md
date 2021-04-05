@@ -47,7 +47,7 @@
  [:div]]
 ```
 
-## 垂直居中
+## 水平居中
 
 ``` clojure
 [:div.bg-yellow
@@ -58,7 +58,7 @@
           :src "/img/openRightMini.svg"}]]]]
 ```
 
-## 水平居中
+## 垂直居中
 
 ``` clojure
 [:div.justify-center.items-center
