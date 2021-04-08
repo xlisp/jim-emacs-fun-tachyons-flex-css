@@ -62,17 +62,17 @@
 ## 水平居中
 
 ``` clojure
-[:div.bg-yellow
- {:style {:height "15em"}}
- [:div.h-100.flex
-  [:div.flex.justify-center.align-center
-   [:img {:style {:height "15em"}
-          :src "/img/openRightMini.svg"}]]]]
+[:div.flex.justify-center.w-100 "369"]
 ```
 
 ## 垂直居中
 
 ``` clojure
+
+[:div.flex.items-center.h-50 "369"]
+
+;; 其他复合例子 ------
+
 [:div.justify-center.items-center
  [:div.flex.flex-row.pa3.pb1.pt4
   [:div.gray.b.f3.flex.justify-center.items-center
